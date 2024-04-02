@@ -1,77 +1,90 @@
 /**
- * sort the numbers/ seggregate 0's and 1's/sort the colors
- * approach1 - 2 pointers technique used
- * approach2 - Dutch National flag algorithm
- * when more than 3 colors/numbers used use any sorting technique. 
+ * Sort the array
+ * approch1 - recursive strategy
+ * approch2 - merge sort
+ * exercise1 -  why a1[]  is not working with recursive strategy
+ * exercise2 - merge 2 unsorted arrays into single sorted array
  */
 public class Program4 {
-    public static void main(String args[]) { 
-        int a[] = {0,2,0,1,0};
-        approach2(a);
-        printArray(a);
+    public static void main(String args[]) {
+        int a1[] = {-74,48,-20,2,10,-84,-5,-9,11,-24,-91,2,-71,64,63,80,28,-30,-58,-11,-44,-87,-22,54,-74,-10,-55,-28,-46,29,10,50,-72,34,26,25,8,51,13,30,35,-8,50,65,-6,16,-2,21,-78,35,-13,14,23,-3,26,-90,86,25,-56,91,-13,92,-25,37,57,-20,-69,98,95,45,47,29,86,-28,73,-44,-46,65,-84,-96,-24,-12,72,-68,93,57,92,52,-45,-2,85,-63,56,55,12,-85,77,-39};
+        int a[] = {1,3,2,4,5};
+        int a2[] = {1,1,0,0,1,0,1};
+        //approach1(a,0,a.length-1);
+        approach2(a2);
+
+        for(int i=0;i<a2.length;i++) {
+            System.out.println(a2[i]);
+        }
+    }
+
+    /** 
+     * using recursive technique
+     * Program works with a[] but dont for a1[]
+     */
+    public static int[] approach1(int[] a, int start, int end) {
+        while(start < end) {
+            if(a[start] <= a[end]) {
+                approach1(a,0,start);
+                start++;
+                continue;
+            }
+            int temp = a[start];
+            a[start] = a[end];
+            a[end] = temp;
+            approach1(a,0,end);
+            start++;            
+        }
+        return a;
     }
 
     /**
-     * two pointers technique used
+     * using merge sort
+     * time complexity - nlogn
      */
-    public static void approach1(int[] a) {
-        int left = 0;
-        for(int i=0;i<a.length;i++) {
-            if(a[i] == 0) {
-                swap(a,left,i);
-                left++;
-            }
+    public static void approach2(int[] inputArray) {
+        int inputArrLength = inputArray.length;
+        if(inputArrLength<2) {
+            return ;
         }
+        int midIndex = inputArrLength/2 ;
+        int[] leftHalf = new int[midIndex];
+        int[] rightHalf = new int[inputArrLength-midIndex];
+        for(int i=0;i<midIndex;i++)  {
+            leftHalf[i] = inputArray[i];
+        }      
 
-        for(int i = left;i<a.length;i++) {
-            if(a[i] == 1) {
-                swap(a,left, i);
-                left++;
-            }
+        for(int i=midIndex;i<inputArrLength;i++) {
+            rightHalf[i-midIndex] = inputArray[i];
         }
-    }
-    public static void swap(int[] a, int left, int right) {
-        int temp = a[left];
-        a[left] = a[right];
-        a[right] = temp;
+        approach2(leftHalf);
+        approach2(rightHalf);
+        merge(inputArray,leftHalf, rightHalf);
     }
 
-    /**
-     * Dutch national flag algorithm
-     * step1- Initialize 3 pointers p0-start/zero pointer, p2-end of the array/two pointer, curr- cursor position in the array
-     * step2- iterate array through curr
-     * step3- if element is zero swap the element and increase the p0
-     *      - if element is two swap the element and decrease the p2
-     *      - if elements is one dont swap increament the curr
-     * step4 - do step3 until curr <=p2
-     * 
-     */
-    public static void approach2(int[] a) {
-        int p0=0,p2=a.length-1,curr=0;
-        while(curr<=p2) {
-
-            if(a[curr]==0) {
-                swap(a,p0,curr);
-                p0++;
-                curr++;
+    public static void merge(int[] inputArray,int[] leftHalf, int[] rightHalf) {
+        int i=0,j=0,k=0;
+        while(i<leftHalf.length && j<rightHalf.length) {
+            if(leftHalf[i] <= rightHalf[j]) {
+                inputArray[k] = leftHalf[i];
+                i++;
+            } else {
+                inputArray[k] = rightHalf[j];
+                j++;
             }
-            else if(a[curr] == 2) {
-                swap(a,p2,curr);
-                p2--;
-                
-            } else if(a[curr] == 1) {
-                curr++;
-            }
-           
-            printArray(a);
+            k++;
         }
 
-    }
+        while(i<leftHalf.length) {
+            inputArray[k] = leftHalf[i];
+            i++;
+            k++;
+        }       
 
-    public static void printArray(int[] a) {
-        for(int i=0;i<a.length;i++) {
-            System.out.print(a[i]+" ");
+        while(j<rightHalf.length) {
+            inputArray[k] = rightHalf[j];
+            j++;
+            k++;
         }
-        System.out.println();
     }
 }
