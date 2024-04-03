@@ -51,8 +51,6 @@
     Notice that the order of the output and the order of the triplets does not matter.
 #### Program9
     rain water problem
-#### Program10
-    claiming stairs problem
 #### Program99
     Matrix problems
 
