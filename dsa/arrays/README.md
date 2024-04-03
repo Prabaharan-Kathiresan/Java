@@ -1,13 +1,13 @@
 ###  **Arrays and DSA** ###
 
-1. [Program1.java](#Program1)
-2. [Program2.java](#Program2)
-3. [Program3.java](#program3)
-4. [Program4.java](#program4)
-5. [Program5.java](#program5)
-6. [Program6.java](#program6)
-7. [Program7.java](#program7)
-8. [Program8.java](#program8)
+1. [Program1.java](#Program1) - 2Pointers technique
+2. [Program2.java](#Program2) - 2Pointers technique
+3. [Program3.java](#program3) - 2Pointers technique & DNF algorithm
+4. [Program4.java](#program4) - Merge Sort algorithm
+5. [Program5.java](#program5) - kadane algorithm
+6. [Program6.java](#program6) - Java technique
+7. [Program7.java](#program7) - Quick Select algorithm
+8. [Program8.java](#program8) - 
 
 #### Program1
     Find the pair which sum equals to the given number. Two pointers technique used. 
