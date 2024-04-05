@@ -9,7 +9,9 @@
 7. [Program7.java](#program7)
 
 #### Program1
-    create a graph using Map 1. addVertex 2.addEdge 3.removeVertex
+    create a graph![Untitled Diagram](https://github.com/Prabaharan-Kathiresan/Java/assets/11556586/eab47618-2e8c-4dd8-a15c-b41df24c51bc)
+ using Map 1. addVertex 2.addEdge 3.removeVertex
+    
 #### Program2
     create a graph using Matrix 1. addVertex 2. addEdge 3. removeVertex
 #### Program3
