@@ -8,6 +8,7 @@
 6. [Program6.java](#program6) - Java technique
 7. [Program7.java](#program7) - Quick Select algorithm
 8. [Program8.java](#program8) - 
+9. [RotateArray.java](#RotateArray) - 2pointers technique
 
 #### Program1
     Find the pair which sum equals to the given number. Two pointers technique used. 
