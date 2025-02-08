@@ -51,7 +51,11 @@
     The distinct triplets are [-1,0,1] and [-1,-1,2].
     Notice that the order of the output and the order of the triplets does not matter.
 #### Program9
-    rain water problem
+    rotate the array n times
+#### Program10
+    Find minimum element in rotated array
+#### Program11
+    check the array is rotated and sorted
 #### Program99
     Matrix problems
 

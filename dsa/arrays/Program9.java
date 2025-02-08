@@ -1,4 +1,4 @@
-public class RotateArray {
+public class Program9 {
     public static void rotate(int[] nums,int k) {
         k%=nums.length;
         System.out.println("modulo="+k);
