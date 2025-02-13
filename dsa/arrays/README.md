@@ -9,8 +9,8 @@
 7. [Program7.java](#program7) - Quick Select algorithm
 8. [Program8.java](#program8) - 
 9. [Program9.java](#program9) - rotate array n times
-10.[Program10.java](#program10) - Find min element in rotated array
-11.[Program11.java](#program11) - check array is rotated and sorted
+10. [Program10.java](#program10) - Find min element in rotated array
+11. [Program11.java](#program11) - check array is rotated and sorted
 
 #### Program1
     Find the pair which sum equals to the given number. Two pointers technique used. 
