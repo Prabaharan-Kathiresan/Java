@@ -5,7 +5,7 @@
 3. [Program3.java](#program3) - 2Pointers technique & DNF algorithm
 4. [Program4.java](#program4) - Merge Sort algorithm
 5. [Program5.java](#program5) - kadane algorithm
-6. [Program6.java](#program6) - Java technique
+6. [Program6.java](#program6) - Find the missing number in array
 7. [Program7.java](#program7) - Quick Select algorithm
 8. [Program8.java](#program8) - 
 9. [Program9.java](#program9) - rotate array n times
